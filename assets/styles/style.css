@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #F6F8FC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: "Finger Paint", sans-serif;
+}
+
+.div_body {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: rgba(255, 255, 255, 0.596);
+    font-size: 25px;
+    margin: 0;
+}
+
+h3 {
+    color: white;
+    font-size: 25px;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ---article */
+article {
+    position: relative;
+    margin-top: 50px;
+    width: 310px;
+    background-color: #48d0b0;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 20px;
+}
+
+.article_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article_details {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+}
+
+.article_img {
+    position: absolute;
+    margin-top: -100px;
+    margin-right: -50px;
+    width: 200px;
+    height: 200px;
+    right: 30px;
+    top: 40px
+}
+
+.article_abilities ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+}
+
+.overgrow {
+    text-align: center;
+    background-color: #A8E050;
+    padding: 5px;
+    width: 70px;
+    border: 5px;
+    border: 1px solid #5aa851;
+    border-radius: 3px;
+}
+
+.chlorophyll {
+    text-align: center;
+    background-color: #A8E050;
+    padding: 5px;
+    width: 80px;
+    border: 5px;
+    border: 1px solid #7aa139;
+    border-radius: 3px;
+}
+
+.torrent {
+    text-align: center;
+    background-color: #6890F0;
+    padding: 5px;
+    width: 80px;
+    border: 5px;
+    border: 1px solid #5170b8;
+    border-radius: 3px;
+}
+
+.blaze {
+    text-align: center;
+    background-color: #6890F0;
+    padding: 5px;
+    width: 80px;
+    border: 5px;
+    border: 1px solid #5170b8;
+    border-radius: 3px;
+}
+
+.article_overgrow {
+    background-color: #A8E050;
+}
+
+.article_blaze {
+    background-color: #6890F0;
+}
+
+.article_torrent {
+    background-color: #6890F0;
+}
