@@ -6,18 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon</title>
 
-    <script src="/assets/scripts/script.js" defer></script>
-    <script src="/assets/scripts/fetch.js" defer></script>
-    <script src="/assets/scripts/template.js" defer></script>
-    <link rel="stylesheet" href="/assets/styles/style.css">
-    <link rel="stylesheet" href="/assets/styles/fonts.css">
+    <script src="assets/scripts/fetch.js" defer></script>
+    <script src="assets/scripts/script.js" defer></script>
+    <script src="assets/scripts/template.js" defer></script>
+
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/fonts.css">
+    <link rel="stylesheet" href="assets/styles/dialog.css">
+    <link rel="stylesheet" href="assets/styles/bg_types.css">
 </head>
 
-<body onload="init()">
+<body onload="fetchs()">
     <div class="div_body">
         <main>
-            <div class="content" id="content"></div>
+            <div class="content_left">
+                <div class="search">
+                    <input type="text" class="search_input">
+                    <button>Suchen</button>
+                </div>
+                <div id="pokemon_list" class="pokemon_list"></div>
+            </div>
+            <div>
+                <div id="content_right" class="content_right"></div>
+            </div>
         </main>
     </div>
 </body>
+
 </html>
