@@ -1,21 +1,18 @@
-/* -------- Normal -------- */
 .Normal {
     background-color: #C8B793;
     color: #2E2E2E;
     border: 1px solid #7D7757;
     border-radius: 6px;
     padding: 2px 8px;
-    /* display: inline-block; */
 }
+
 .bg_Normal {
     background-color: #A8A77A;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Feuer -------- */
 .Feuer {
     background-color: #FF9C55;
     color: #2E2E2E;
@@ -24,15 +21,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Feuer {
     background-color: #EE8130;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Wasser -------- */
 .Wasser {
     background-color: #7FA6F5;
     color: #2E2E2E;
@@ -41,15 +37,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Wasser {
     background-color: #6390F0;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Pflanze -------- */
 .Pflanze {
     background-color: #92DC65;
     color: #2E2E2E;
@@ -58,15 +53,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Pflanze {
     background-color: #7AC74C;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Elektro -------- */
 .Elektro {
     background-color: #FFD950;
     color: #2E2E2E;
@@ -75,15 +69,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Elektro {
     background-color: #F7D02C;
     color: #2E2E2E;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Eis -------- */
 .Eis {
     background-color: #AEE8E6;
     color: #2E2E2E;
@@ -92,15 +85,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Eis {
     background-color: #96D9D6;
     color: #2E2E2E;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Kampf -------- */
 .Kampf {
     background-color: #D63E38;
     color: #FFFFFF;
@@ -109,15 +101,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Kampf {
     background-color: #C22E28;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Gift -------- */
 .Gift {
     background-color: #BB55BA;
     color: #FFFFFF;
@@ -126,15 +117,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Gift {
     background-color: #A33EA1;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Boden -------- */
 .Boden {
     background-color: #EBD680;
     color: #2E2E2E;
@@ -143,15 +133,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Boden {
     background-color: #E2BF65;
     color: #2E2E2E;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Flug -------- */
 .Flug {
     background-color: #B9A6F7;
     color: #2E2E2E;
@@ -160,15 +149,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Flug {
     background-color: #A98FF3;
     color: #2E2E2E;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Psycho -------- */
 .Psycho {
     background-color: #FF6A97;
     color: #FFFFFF;
@@ -177,15 +165,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Psycho {
     background-color: #F95587;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Käfer -------- */
 .Käfer {
     background-color: #BDCC2F;
     color: #2E2E2E;
@@ -194,15 +181,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Käfer {
     background-color: #A6B91A;
     color: #2E2E2E;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Gestein -------- */
 .Gestein {
     background-color: #C9B653;
     color: #2E2E2E;
@@ -211,15 +197,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Gestein {
     background-color: #B6A136;
     color: #2E2E2E;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Geist -------- */
 .Geist {
     background-color: #8A6DB0;
     color: #FFFFFF;
@@ -228,15 +213,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Geist {
     background-color: #735797;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Drache -------- */
 .Drache {
     background-color: #8950FF;
     color: #FFFFFF;
@@ -245,15 +229,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Drache {
     background-color: #6F35FC;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Unlicht -------- */
 .Unlicht {
     background-color: #836856;
     color: #FFFFFF;
@@ -262,15 +245,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Unlicht {
     background-color: #705746;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Stahl -------- */
 .Stahl {
     background-color: #C7C7DA;
     color: #2E2E2E;
@@ -279,15 +261,14 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Stahl {
     background-color: #B7B7CE;
     color: #2E2E2E;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
     border-radius: 12px;
     padding: 12px;
 }
 
-/* -------- Fee -------- */
 .Fee {
     background-color: #E79BC0;
     color: #2E2E2E;
@@ -296,10 +277,136 @@
     padding: 2px 8px;
     display: inline-block;
 }
+
 .bg_Fee {
     background-color: #D685AD;
     color: #FFFFFF;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
     border-radius: 12px;
     padding: 12px;
+}
+
+.bgNormal {
+    background-color: #A8A77A;
+    color: #2E2E2E;
+    border: 1px solid #6D6D4D;
+    border-radius: 6px;
+}
+
+.bgFeuer {
+    background-color: #FF9C55;
+    color: #2E2E2E;
+    border: 1px solid #B85E20;
+    border-radius: 8px;
+}
+
+.bgWasser {
+    background-color: #7FA6F5;
+    color: #1A1A1A;
+    border: 1px solid #4766AC;
+    border-radius: 10px;
+}
+
+.bgPflanze {
+    background-color: #92DC65;
+    color: #1E2B1A;
+    border: 1px solid #578E36;
+    border-radius: 6px;
+}
+
+.bgElektro {
+    background-color: #FFD950;
+    color: #2A2A2A;
+    border: 1px solid #B59A20;
+    border-radius: 12px;
+}
+
+.bgEis {
+    background-color: #AEE8E6;
+    color: #1E1E1E;
+    border: 1px solid #6CA3A1;
+    border-radius: 8px;
+}
+
+.bgKampf {
+    background-color: #D63E38;
+    color: #F9F9F9;
+    border: 1px solid #891E1C;
+    border-radius: 6px;
+}
+
+.bgGift {
+    background-color: #BB55BA;
+    color: #F3F3F3;
+    border: 1px solid #732D72;
+    border-radius: 8px;
+}
+
+.bgBoden {
+    background-color: #EBD680;
+    color: #1A1A1A;
+    border: 1px solid #A48A49;
+    border-radius: 10px;
+}
+
+.bgFlug {
+    background-color: #B9A6F7;
+    color: #1C1C1C;
+    border: 1px solid #7863AC;
+    border-radius: 6px;
+}
+
+.bgPsycho {
+    background-color: #FF6A97;
+    color: #1A1A1A;
+    border: 1px solid #B53C5F;
+    border-radius: 12px;
+}
+
+.bgKäfer {
+    background-color: #BDCC2F;
+    color: #2A2A2A;
+    border: 1px solid #768312;
+    border-radius: 8px;
+}
+
+.bgGestein {
+    background-color: #C9B653;
+    color: #1E1E1E;
+    border: 1px solid #7D6F26;
+    border-radius: 6px;
+}
+
+.bgGeist {
+    background-color: #8A6DB0;
+    color: #F9F9F9;
+    border: 1px solid #513D6B;
+    border-radius: 10px;
+}
+
+.bgDrache {
+    background-color: #8950FF;
+    color: #F9F9F9;
+    border: 1px solid #4E25AC;
+    border-radius: 8px;
+}
+
+.bgUnlicht {
+    background-color: #836856;
+    color: #F0F0F0;
+    border: 1px solid #4E3D31;
+    border-radius: 6px;
+}
+
+.bgStahl {
+    background-color: #C7C7DA;
+    color: #1C1C1C;
+    border: 1px solid #828297;
+    border-radius: 12px;
+}
+
+.bgFee {
+    background-color: #E79BC0;
+    color: #1E1E1E;
+    border: 1px solid #965E78;
+    border-radius: 8px;
 }

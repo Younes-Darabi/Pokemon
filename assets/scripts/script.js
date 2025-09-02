@@ -1,8 +1,12 @@
 let pokemonDB = [];
+let dbForPokemonDB=[];
 
 function init() {
     pokemonDbMaker();
+    savePokemonShortStoryPokemonDB();
     pokemonListRender();
+    saveAbilitiesInPokemonDB();
+    showPokemondetailsInRight(0);
 }
 
 function pokemonDbMaker() {
@@ -18,6 +22,8 @@ function pokemonDbMaker() {
             "weight": pokemonDetails[i].weight,
             "imageUrl": pokemonDetails[i].sprites.other.home.front_default,
             "types": [],
+            "abilities": [],
+            "story": "",
         });
         pokemonTypesRender(i);
     }
@@ -30,32 +36,28 @@ function pokemonTypesRender(i) {
     }
 }
 
-function pokemonListRender() {
-    let output = document.getElementById('pokemon_list');
-    let html = "";
-    output.innerHTML = "";
-
-    for (let i = 0; i < pokemonDB.length; i++) {
-        html += htmlPokemonListRender(i);
+function savePokemonShortStoryPokemonDB() {
+    for (let i = 0; i < pokemonSpecies.length; i++) {
+        let output = "";
+        for (let j = 0; j < pokemonSpecies[i].flavor_text_entries.length; j++) {
+            if (pokemonSpecies[i].flavor_text_entries[j].language.name === "de") {
+                output = pokemonSpecies[i].flavor_text_entries[j].flavor_text;
+                break;
+            }
+        }
+        pokemonDB[i].story = output;
     }
-    output.innerHTML = html;
 }
 
-// function showPokemondetailsInRight(i) {
-//     let output = document.getElementById('content_right');
-//     output.innerHTML = "";
-//     output.innerHTML = htmlShowPokemondetailsInRight(i);
-// }
+function saveAbilitiesInPokemonDB() {
+    for (let i = 0; i < pokemonAbilities.length; i++) {
+        for (let j = 0; j < pokemonAbilities[i].length; j++) {
+            pokemonDB[i].abilities.push(pokemonAbilities[i][j].names[4].name);
+        }
+    }
+}
 
-// function savePokemonShortStory() {
-//     for (let i = 0; i < pokemonSpecies.length; i++) {
-//         let output = "";
-//         for (let j = 0; j < pokemonSpecies[i].flavor_text_entries.length; j++) {
-//             if (pokemonSpecies[i].flavor_text_entries[j].language.name === "de") {
-//                 output = pokemonSpecies[i].flavor_text_entries[j].flavor_text;
-//                 break;
-//             }
-//         }
-//         pokemonShortStory.push(output.trim());
-//     }
-// }
+async function showMorePokemonInList() {
+    start += 30;
+    await fetchs();
+}

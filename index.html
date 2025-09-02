@@ -17,7 +17,10 @@
 </head>
 
 <body onload="fetchs()">
-    <div class="div_body">
+    <div id="content_loading" class="content_loading">
+        <img src="assets/img/loading.gif" alt="Loading">
+    </div>
+    <div id="div_body" class="div_body display_none">
         <main>
             <div class="content_left">
                 <div class="search">
@@ -25,9 +28,10 @@
                     <button>Suchen</button>
                 </div>
                 <div id="pokemon_list" class="pokemon_list"></div>
+                <button onclick="showMorePokemonInList()">mehr</button>
             </div>
             <div>
-                <div id="content_right" class="content_right"></div>
+                <div id="content_right" class="content_right"></div>              
             </div>
         </main>
     </div>
