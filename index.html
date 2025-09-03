@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/icons/pikachu.png">
     <title>Pokemon</title>
 
     <script src="assets/scripts/fetch.js" defer></script>
@@ -12,7 +13,6 @@
 
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="stylesheet" href="assets/styles/fonts.css">
-    <link rel="stylesheet" href="assets/styles/dialog.css">
     <link rel="stylesheet" href="assets/styles/bg_types.css">
 </head>
 
@@ -20,18 +20,25 @@
     <div id="content_loading" class="content_loading">
         <img src="assets/img/loading.gif" alt="Loading">
     </div>
+    <header>
+        
+    </header>
     <div id="div_body" class="div_body display_none">
         <main>
             <div class="content_left">
-                <div class="search">
-                    <input type="text" class="search_input">
-                    <button>Suchen</button>
-                </div>
                 <div id="pokemon_list" class="pokemon_list"></div>
-                <button onclick="showMorePokemonInList()">mehr</button>
+                <img id="btn_plus" class="btn_plus" onclick="showMorePokemonInList()" src="assets/img/icons/plus.png"
+                    alt="mehr">
+                <img id="more_loading" class="more_loading" src="assets/img/loading.webp" alt="Loading">
             </div>
             <div>
-                <div id="content_right" class="content_right"></div>              
+                <div class="div_right">
+                    <div id="content_right" class="content_right"></div>
+                    <div class="search">
+                        <input type="text" class="search_input" id="search_input">
+                        <button onclick="searchInPokemonList()">Suchen</button>
+                    </div>
+                </div>
             </div>
         </main>
     </div>

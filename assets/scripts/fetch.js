@@ -3,83 +3,95 @@ let pokemonDetails = [];
 let pokemonTypes = [];
 let pokemonSpecies = [];
 let pokemonAbilities = [];
-
+let pokemonEvolution = [];
 let start = 0;
 
 async function fetchs() {
-    await getPokemonNameUrlFromAPI();
-    await getPokemonDetailsFromUrl();
-    await getPokemonTypesFromUrl();
-    await getPokemonSpeciesFromUrl();
-    await getPokemonAbilitiesFromUrl();
-    init();
+  await getPokemonNameUrlFromAPI();
+  await getPokemonDetailsFromUrl();
+  await getPokemonTypesFromUrl();
+  await getPokemonSpeciesFromUrl();
+  await getPokemonAbilitiesFromUrl();
+  await getPokemonEvolutionFromUrl();
+  init();
 }
 
-const getPokemonNameUrlFromAPI = async () => {
-    pokemonNameUrl = [];
-    try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=30&offset=${start}`);
-        const data = await response.json();
-        pokemonNameUrl = data.results;
-    } catch (error) {
-        console.error("Error:", error.message);
-    }
+async function getPokemonNameUrlFromAPI() {
+  pokemonNameUrl = [];
+  try {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=30&offset=${start}`);
+    const data = await response.json();
+    pokemonNameUrl = data.results;
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
 }
 
-const getPokemonDetailsFromUrl = async () => {
-    pokemonDetails = [];
-    for (let i = 0; i < pokemonNameUrl.length; i++) {
-        try {
-            const response = await fetch(pokemonNameUrl[i].url);
-            const data = await response.json();
-            pokemonDetails.push(data);
-        } catch (error) {
-            console.error("Error:", error.message);
-        }
-    }
-}
+async function getPokemonDetailsFromUrl() {
+  pokemonDetails = [];
+  try {
+    const promises = pokemonNameUrl.map(p =>
+      fetch(p.url).then(res => res.json())
+    );
+    const results = await Promise.all(promises);
+    results.forEach(data => pokemonDetails.push(data));
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+};
 
-const getPokemonTypesFromUrl = async () => {
-    pokemonTypes = [];
+async function getPokemonTypesFromUrl() {
+  pokemonTypes = [];
+  try {
     for (let i = 0; i < pokemonDetails.length; i++) {
-        pokemonTypes[i] = [];
-        for (let j = 0; j < pokemonDetails[i].types.length; j++) {
-            try {
-                const response = await fetch(pokemonDetails[i].types[j].type.url);
-                const data = await response.json();
-                pokemonTypes[i].push(data);
-            } catch (error) {
-                console.error("Error:", error.message);
-            }
-        }
+      const promises = pokemonDetails[i].types.map(t =>
+        fetch(t.type.url).then(res => res.json())
+      );
+      const typesData = await Promise.all(promises);
+      pokemonTypes[i] = typesData;
     }
-}
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+};
 
-const getPokemonSpeciesFromUrl = async () => {
-    pokemonSpecies = [];
-    for (let i = 0; i < pokemonDetails.length; i++) {
-        try {
-            const response = await fetch(pokemonDetails[i].species.url);
-            const data = await response.json();
-            pokemonSpecies.push(data);
-        } catch (error) {
-            console.error("Error:", error.message);
-        }
-    }
-}
+async function getPokemonSpeciesFromUrl() {
+  pokemonSpecies = [];
+  try {
+    const promises = pokemonDetails.map(p =>
+      fetch(p.species.url).then(res => res.json())
+    );
+    const results = await Promise.all(promises);
+    results.forEach(data => pokemonSpecies.push(data));
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+};
 
-const getPokemonAbilitiesFromUrl = async () => {
-    pokemonAbilities = [];
+async function getPokemonAbilitiesFromUrl() {
+  pokemonAbilities = [];
+  try {
     for (let i = 0; i < pokemonDetails.length; i++) {
-        pokemonAbilities[i] = [];
-        for (let j = 0; j < pokemonDetails[i].abilities.length; j++) {
-            try {
-                const response = await fetch(pokemonDetails[i].abilities[j].ability.url);
-                const data = await response.json();
-                pokemonAbilities[i].push(data);
-            } catch (error) {
-                console.error("Error:", error.message);
-            }
-        }
+      const promises = pokemonDetails[i].abilities.map(a =>
+        fetch(a.ability.url).then(res => res.json())
+      );
+      const abilitiesData = await Promise.all(promises);
+      pokemonAbilities[i] = abilitiesData;
     }
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+};
+
+async function getPokemonEvolutionFromUrl() {
+  pokemonEvolution = [];
+  try {
+    let response = pokemonSpecies.map(async item => {
+      let datas = await fetch(item.evolution_chain.url);
+      return await datas.json();
+    });
+    pokemonEvolution = await Promise.all(response);
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
 }

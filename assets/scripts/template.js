@@ -1,80 +1,80 @@
-function pokemonListRender() {
-    let output = document.getElementById('pokemon_list');
-    let html = "";
-    output.innerHTML = "";
-
-    for (let i = 0; i < pokemonDB.length; i++) {
-        html += htmlPokemonListRender(i);
-    }
-    output.innerHTML = html;
-
-    document.getElementById('content_loading').style.display = "none"
-    document.getElementById('div_body').classList.remove('display_none')
-}
-
-function htmlPokemonListRender(i) {
+function htmlPokemonListRender(i, list, listName) {
     return `
-<article onclick="showPokemondetailsInRight(${i})" class="bg_${pokemonDB[i].types[0]}">
+<article onclick="showPokemondetailsInRight(${i},${listName})" class="bg_${list[i].types[0]}">
     <div class="article_div">
         <div class="details_img">
             <div class="title_number">
-                <h2>#${(pokemonDB[i].id).toString().padStart(4, "0")}</h2>
-                <h3>${pokemonDB[i].de}</h3>
+                <h2>#${(list[i].id).toString().padStart(4, "0")}</h2>
+                <h3>${list[i].de}</h3>
             </div>
-            <img class="article_img" src="${pokemonDB[i].imageUrl}" alt="${pokemonDB[i].name}"></img>
+            <img class="article_img" src="${list[i].imageUrl}" alt="${list[i].name}"></img>
         </div>
         <div class="article_types">
-            <ul>${showPokemonTypes(i)}</ul>
+            <ul>${showPokemonTypes(i, list)}</ul>
         </div>
     </div>
 </article>
 `;
 }
 
-function htmlShowPokemondetailsInRight(i) {
+function htmlShowPokemondetailsInRight(i, list) {
     return `
 <div class="div_main">
-    <img class="article_img" src="${pokemonDB[i].imageUrl}" alt="${pokemonDB[i].de}"></img>
-    <h2 class="color_blackT text_align padding-5">#${pokemonDB[i].id}</h2>
-    <h3 class="color_black text_align padding-5">${pokemonDB[i].de}</h3>
-    <p class="pokemon_Story">${pokemonDB[i].story}</p>
-    <ul class="types">${showPokemonTypes(i)}</ul>
+    <img class="article_img" src="${list[i].imageUrl}" alt="${list[i].de}"></img>
+    <h2 class="color_blackT text_align padding-5">#${list[i].id}</h2>
+    <h3 class="color_black text_align padding-5">${list[i].de}</h3>
+    <p class="pokemon_Story">${list[i].story}</p>
+    <ul class="types">${showPokemonTypes(i, list)}</ul>
     <div class="weight_height">
         <h4>Gewicht</h4>
-        <h4>${pokemonDB[i].weight / 10} kg</h4>
+        <h4>${list[i].weight / 10} kg</h4>
     </div>
     <div class="weight_height">
         <h4>Körpergröße</h4>
-        <h4>${pokemonDB[i].height / 10} m</h4>
+        <h4>${list[i].height / 10} m</h4>
     </div>
     <div class="abilities">
         <h4>Fähigkeiten</h4>
-        <ul>${showPokemonAbilities(i)}</ul>
+        <ul>${showPokemonAbilities(i, list)}</ul>
+    </div>
+    <div class="stats">
+        <h4>Statuswerte</h4>
+        <div class="div_stats">${showPokemonStats(i, list)}</div>
     </div>
 </div>
         `;
 }
 
-function showPokemondetailsInRight(i) {
-    let output = document.getElementById('content_right');
-    output.classList = "content_right";
-    output.classList.add(`bg${pokemonDB[i].types[0]}`);
-    output.innerHTML = "";
-    output.innerHTML = htmlShowPokemondetailsInRight(i);
-}
+    // <div class="Evolution">
+    //     <h4>Evolution</h4>
+    //     <div class="div_Evolution">${showPokemonStats(i, list)}</div>
+    // </div>
 
-function showPokemonTypes(i) {
-    let types = "";
-    for (let j = 0; j < pokemonDB[i].types.length; j++) {
-        types += `<li class="${pokemonDB[i].types[j]}">${pokemonDB[i].types[j]}</li>`;
-    }
-    return types;
-}
-
-function showPokemonAbilities(i) {
-    let abilities = "";
-    for (let j = 0; j < pokemonDB[i].abilities.length; j++) {
-        abilities += `<li>${pokemonDB[i].abilities[j]}</li>`;
-    }
-    return abilities;
+function showPokemonStats(i, list) {
+    return `
+<ul>
+    <li class="kp">KP</li>
+    <li>${list[i].stats[0]}</li>
+</ul>
+<ul>
+    <li class="at">AT</li>
+    <li>${list[i].stats[1]}</li>
+</ul>
+<ul>
+    <li class="ve">VE</li>
+    <li>${list[i].stats[2]}</li>
+</ul>
+<ul>
+    <li class="sa">SA</li>
+    <li>${list[i].stats[3]}</li>
+</ul>
+<ul>
+    <li class="sd">SD</li>
+    <li>${list[i].stats[4]}</li>
+</ul>
+<ul>
+    <li class="ini">INI</li>
+    <li>${list[i].stats[4]}</li>
+</ul>
+    `;
 }

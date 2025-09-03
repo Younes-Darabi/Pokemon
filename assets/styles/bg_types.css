@@ -11,6 +11,7 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+    border: 1px solid #7D7757;
 }
 
 .Feuer {
@@ -27,6 +28,7 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+    border: 1px solid #B85E20;
 }
 
 .Wasser {
@@ -43,6 +45,7 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+    border: 1px solid #4766AC;
 }
 
 .Pflanze {
@@ -59,6 +62,8 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+    border: 1px solid #578E36;
+
 }
 
 .Elektro {
@@ -75,6 +80,8 @@
     color: #2E2E2E;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #B59A20;
+
 }
 
 .Eis {
@@ -91,6 +98,8 @@
     color: #2E2E2E;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #6CA3A1;
+
 }
 
 .Kampf {
@@ -107,6 +116,8 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #891E1C;
+
 }
 
 .Gift {
@@ -123,6 +134,8 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #732D72;
+
 }
 
 .Boden {
@@ -139,6 +152,8 @@
     color: #2E2E2E;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #A48A49;
+
 }
 
 .Flug {
@@ -155,6 +170,8 @@
     color: #2E2E2E;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #7863AC;
+
 }
 
 .Psycho {
@@ -171,6 +188,8 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #B53C5F;
+
 }
 
 .Käfer {
@@ -187,6 +206,8 @@
     color: #2E2E2E;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #768312;
+
 }
 
 .Gestein {
@@ -203,6 +224,8 @@
     color: #2E2E2E;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #7D6F26;
+
 }
 
 .Geist {
@@ -219,6 +242,8 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #513D6B;
+
 }
 
 .Drache {
@@ -235,6 +260,8 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #4E25AC;
+
 }
 
 .Unlicht {
@@ -251,6 +278,8 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #4E3D31;
+
 }
 
 .Stahl {
@@ -267,6 +296,8 @@
     color: #2E2E2E;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #828297;
+
 }
 
 .Fee {
@@ -283,6 +314,8 @@
     color: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
+        border: 1px solid #965E78;
+
 }
 
 .bgNormal {
@@ -297,6 +330,8 @@
     color: #2E2E2E;
     border: 1px solid #B85E20;
     border-radius: 8px;
+        border: 1px solid #6D6D4D;
+
 }
 
 .bgWasser {
@@ -311,6 +346,8 @@
     color: #1E2B1A;
     border: 1px solid #578E36;
     border-radius: 6px;
+        border: 1px solid #4766AC;
+
 }
 
 .bgElektro {
@@ -325,6 +362,8 @@
     color: #1E1E1E;
     border: 1px solid #6CA3A1;
     border-radius: 8px;
+        border: 1px solid #B59A20;
+
 }
 
 .bgKampf {
@@ -339,6 +378,8 @@
     color: #F3F3F3;
     border: 1px solid #732D72;
     border-radius: 8px;
+        border: 1px solid #891E1C;
+
 }
 
 .bgBoden {
@@ -353,6 +394,8 @@
     color: #1C1C1C;
     border: 1px solid #7863AC;
     border-radius: 6px;
+        border: 1px solid #A48A49;
+
 }
 
 .bgPsycho {
@@ -367,6 +410,8 @@
     color: #2A2A2A;
     border: 1px solid #768312;
     border-radius: 8px;
+        border: 1px solid #B53C5F;
+
 }
 
 .bgGestein {
@@ -381,6 +426,8 @@
     color: #F9F9F9;
     border: 1px solid #513D6B;
     border-radius: 10px;
+        border: 1px solid #7D6F26;
+
 }
 
 .bgDrache {
@@ -395,6 +442,8 @@
     color: #F0F0F0;
     border: 1px solid #4E3D31;
     border-radius: 6px;
+        border: 1px solid #4E25AC;
+
 }
 
 .bgStahl {
@@ -409,4 +458,6 @@
     color: #1E1E1E;
     border: 1px solid #965E78;
     border-radius: 8px;
+        border: 1px solid #828297;
+
 }
