@@ -17,6 +17,10 @@
 }
 
 @media(max-width:650px) {
+    .overflow_hidden {
+        overflow: hidden;
+    }
+
     main {
         flex-direction: column-reverse;
         align-items: center;

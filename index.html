@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/styles/responsive.css">
 </head>
 
-<body onload="fetchs()">
+<body id="body" onload="fetchs()">
     <div id="content_loading" class="content_loading">
         <img src="assets/img/loading.gif" alt="Loading">
     </div>
@@ -31,8 +31,7 @@
                 <div class="div_right">
                     <div id="content_right" class="content_right"></div>
                     <div class="search">
-                        <input type="search" class="search_input" id="search_input">
-                        <button onclick="searchInPokemonList()">Suchen</button>
+                        <input onkeyup="searchInPokemonList()" type="search" class="search_input" placeholder="Bitte hier zum Suchen eingeben" id="search_input">
                     </div>
                     <div class="filter">
                         <select onchange="filterRender()" id="filter" name="filter">

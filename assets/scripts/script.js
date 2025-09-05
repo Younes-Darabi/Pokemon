@@ -30,7 +30,7 @@ function pokemonListRender(list, listName) {
 function searchInPokemonList() {
     document.getElementById('btn_plus').style.display = "none"
     let value = document.getElementById('search_input').value.toLowerCase().trim();
-    if (value === "") {
+    if (value.length<3) {
         pokemonListRender(pokemonDB, "pokemonDB");
         return;
     }
@@ -55,7 +55,6 @@ function pokemonDbMaker() {
             "de": pokemonSpecies[i].names[5].name,
             "height": pokemonDetails[i].height,
             "weight": pokemonDetails[i].weight,
-            // "imageUrl": pokemonDetails[i].sprites.other.dream_world.front_default,
             "imageUrl": pokemonDetails[i].sprites.other.home.front_default,
             "types": [],
             "abilities": [],
@@ -113,7 +112,7 @@ function savePokemonShortStoryPokemonDB() {
 async function showMorePokemonInList() {
     document.getElementById('btn_plus').style.display = "none"
     document.getElementById('more_loading').style.display = "block"
-    start += 200;
+    start += 50;
     await fetchs();
 }
 
@@ -134,6 +133,7 @@ function showPokemondetailsInRight(i, list) {
 }
 
 function showPokemondetailsInDialog(i, list) {
+    document.getElementById('body').classList.add("overflow_hidden");
     let dialog = document.getElementById('dialog');
     dialog.classList.add("dialog");
     dialog.classList.add(`bg${list[i].types[0]}`);
@@ -149,9 +149,11 @@ function showPokemondetailsInDialog(i, list) {
 function exitDialog(dialog) {
     document.getElementById('dialog').classList = "dialog_none";
     document.getElementById('dialog').classList.add("dialog_none_mob");
+    document.getElementById('body').classList.remove("overflow_hidden");
 }
 
 function filterRender() {
+
     let selectFilter = document.getElementById('filter').value;
     if (selectFilter == "all") {
         pokemonListRender(pokemonDB, 'pokemonDB');

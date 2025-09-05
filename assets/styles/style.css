@@ -51,8 +51,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: start;
-    width: 290px;
-    height: 480px;
+    width: 292px;
     background-color: white;
     border-radius: 5px;
     border: 1px solid #efefef;
@@ -80,7 +79,6 @@ p {
     margin: 0;
 }
 
-/* ---Serach */
 .search {
     display: flex;
     width: 270px;
@@ -115,10 +113,8 @@ p {
     outline: none;
     color: #bb55ba;
     font-weight: bold;
-    font-size: 16px;
 }
 
-/* ---article */
 article {
     margin-top: 80px;
     width: 250px;
@@ -271,7 +267,7 @@ article:hover {
 }
 
 .abilities {
-    width: 90%;
+    width: 100%;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -290,8 +286,11 @@ article:hover {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: 14px;
+    gap: 5px;
 }
 
 .abilities li {
