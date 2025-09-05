@@ -7,19 +7,28 @@ let pokemonEvolution = [];
 let start = 0;
 
 async function fetchs() {
-  await getPokemonNameUrlFromAPI();
+  await getPokemonNameUrlFromAPI(start);
   await getPokemonDetailsFromUrl();
   await getPokemonTypesFromUrl();
   await getPokemonSpeciesFromUrl();
   await getPokemonAbilitiesFromUrl();
-  await getPokemonEvolutionFromUrl();
   init();
+  // await allPokemonLoading();
 }
 
-async function getPokemonNameUrlFromAPI() {
+// async function allPokemonLoading(){
+//   await getPokemonNameUrlFromAPI(250);
+//   await getPokemonDetailsFromUrl();
+//   await getPokemonTypesFromUrl();
+//   await getPokemonSpeciesFromUrl();
+//   await getPokemonAbilitiesFromUrl();
+//   init();
+// }
+
+async function getPokemonNameUrlFromAPI(start) {
   pokemonNameUrl = [];
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=30&offset=${start}`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=200&offset=${start}`);
     const data = await response.json();
     pokemonNameUrl = data.results;
   } catch (error) {
@@ -82,16 +91,3 @@ async function getPokemonAbilitiesFromUrl() {
     console.error("Error:", error.message);
   }
 };
-
-async function getPokemonEvolutionFromUrl() {
-  pokemonEvolution = [];
-  try {
-    let response = pokemonSpecies.map(async item => {
-      let datas = await fetch(item.evolution_chain.url);
-      return await datas.json();
-    });
-    pokemonEvolution = await Promise.all(response);
-  } catch (error) {
-    console.error("Error:", error.message);
-  }
-}

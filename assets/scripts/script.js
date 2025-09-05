@@ -1,6 +1,7 @@
 let pokemonDB = [];
 let dbForPokemonDB = [];
 let searchPokemonDB = [];
+let arrayFilter = [];
 
 function init() {
     pokemonDbMaker();
@@ -16,15 +17,14 @@ function pokemonListRender(list, listName) {
     let output = document.getElementById('pokemon_list');
     let html = "";
     output.innerHTML = "";
-
     for (let i = 0; i < list.length; i++) {
         html += htmlPokemonListRender(i, list, listName);
     }
     output.innerHTML = html;
-    document.getElementById('content_loading').style.display = "none"
-    document.getElementById('div_body').classList.remove('display_none')
-    document.getElementById('more_loading').style.display = "none"
-    document.getElementById('btn_plus').style.display = "block"
+    document.getElementById('content_loading').style.display = "none";
+    document.getElementById('div_body').classList.remove('display_none');
+    document.getElementById('more_loading').style.display = "none";
+    document.getElementById('btn_plus').style.display = "block";
 }
 
 function searchInPokemonList() {
@@ -34,14 +34,13 @@ function searchInPokemonList() {
         pokemonListRender(pokemonDB, "pokemonDB");
         return;
     }
-    searchPokemonDB = pokemonDB.filter(item =>
-        item.name.toLowerCase().includes(value) ||
-        item.de.toLowerCase().includes(value)
-    );
+    searchPokemonDB = pokemonDB.filter(item => item.de.toLowerCase().includes(value));
     if (searchPokemonDB.length === 0) {
         document.getElementById('pokemon_list').innerHTML = "<p>Leider wurde kein Pokémon gefunden</p>";
+        document.getElementById('btn_plus').style.display = "none";
     } else {
         pokemonListRender(searchPokemonDB, "searchPokemonDB");
+        document.getElementById('btn_plus').style.display = "none";
     }
 }
 
@@ -50,14 +49,14 @@ function pokemonDbMaker() {
     for (let i = 0; i < pokemonNameUrl.length; i++) {
         let number = ((i + start) + 1).toString().padStart(4, "0");
         let name = pokemonNameUrl[i].name;
-        name = name.charAt(0).toUpperCase() + name.slice(1);
         dbForPokemonDB.push({
             "id": number,
             "name": name,
             "de": pokemonSpecies[i].names[5].name,
             "height": pokemonDetails[i].height,
             "weight": pokemonDetails[i].weight,
-            "imageUrl": pokemonDetails[i].sprites.other.dream_world.front_default,
+            // "imageUrl": pokemonDetails[i].sprites.other.dream_world.front_default,
+            "imageUrl": pokemonDetails[i].sprites.other.home.front_default,
             "types": [],
             "abilities": [],
             "stats": [],
@@ -114,8 +113,16 @@ function savePokemonShortStoryPokemonDB() {
 async function showMorePokemonInList() {
     document.getElementById('btn_plus').style.display = "none"
     document.getElementById('more_loading').style.display = "block"
-    start += 30;
+    start += 200;
     await fetchs();
+}
+
+function showPokemonTypes(i, list) {
+    let types = "";
+    for (let j = 0; j < list[i].types.length; j++) {
+        types += `<li class="${list[i].types[j]}">${list[i].types[j]}</li>`;
+    }
+    return types;
 }
 
 function showPokemondetailsInRight(i, list) {
@@ -126,10 +133,36 @@ function showPokemondetailsInRight(i, list) {
     output.innerHTML = htmlShowPokemondetailsInRight(i, list);
 }
 
-function showPokemonTypes(i, list) {
-    let types = "";
-    for (let j = 0; j < list[i].types.length; j++) {
-        types += `<li class="${list[i].types[j]}">${list[i].types[j]}</li>`;
+function showPokemondetailsInDialog(i, list) {
+    let dialog = document.getElementById('dialog');
+    dialog.classList.add("dialog");
+    dialog.classList.add(`bg${list[i].types[0]}`);
+    dialog.style.border = "none";
+    dialog.style.borderRadius = "none";
+    dialog.classList.remove("dialog_none_mob")
+    dialog.innerHTML = htmlShowPokemondetailsInRight(i, list);
+    dialog.innerHTML += `
+    <img class="exit" onclick="exitDialog()" src="assets/img/icons/exit.png" alt="exit">
+    `;
+}
+
+function exitDialog(dialog) {
+    document.getElementById('dialog').classList = "dialog_none";
+    document.getElementById('dialog').classList.add("dialog_none_mob");
+}
+
+function filterRender() {
+    let selectFilter = document.getElementById('filter').value;
+    if (selectFilter == "all") {
+        pokemonListRender(pokemonDB, 'pokemonDB');
+    } else {
+        pokemonDB.forEach(item => {
+            item.types.forEach(data => {
+                if (data == selectFilter) {
+                    arrayFilter.push(item);
+                }
+            })
+        })
+        pokemonListRender(arrayFilter, "arrayFilter");
     }
-    return types;
 }

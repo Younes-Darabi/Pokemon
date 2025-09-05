@@ -10,37 +10,39 @@ body {
 }
 
 .div_body {
-    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin:50px 0;
+    margin: 50px 0;
+    max-width: 1920px;
 }
 
 main {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .content_left {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex: 1;
-    flex-wrap: wrap;
     gap: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
-.pokemon_list{
+.pokemon_list {
+    width: 1140px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.div_right{
+.div_right {
     position: sticky;
     top: 100px;
 }
@@ -49,13 +51,14 @@ main {
     display: flex;
     justify-content: center;
     align-items: start;
-    width: 310px;
-    height: 600px;
+    width: 290px;
+    height: 480px;
     background-color: white;
     border-radius: 5px;
     border: 1px solid #efefef;
     padding-bottom: 25px;
     margin-bottom: 20px;
+    margin-top: 70px;
 }
 
 h2 {
@@ -73,14 +76,14 @@ h4 {
     margin: 0;
 }
 
-p{
+p {
     margin: 0;
 }
 
 /* ---Serach */
-.search{
+.search {
     display: flex;
-    width: 290px;
+    width: 270px;
     background-color: #efefef;
     border: 1px solid #dfdede;
     padding: 10px;
@@ -88,7 +91,7 @@ p{
     gap: 10px;
 }
 
-.search button{
+.search button {
     width: 100px;
     color: #bb55ba;
     cursor: pointer;
@@ -98,12 +101,12 @@ p{
     transition: all 500ms ease-in-out;
 }
 
-.search button:hover{
+.search button:hover {
     background-color: #bb55ba;
     color: white;
 }
 
-.search_input{
+.search_input {
     width: 100%;
     height: 30px;
     border-radius: 5px;
@@ -117,7 +120,6 @@ p{
 
 /* ---article */
 article {
-    position: relative;
     margin-top: 80px;
     width: 250px;
     height: 110px;
@@ -139,22 +141,29 @@ article:hover {
 .article_div {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .details_img {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .article_img {
-    margin-top: -100px;
+    margin-top: -80px;
     width: 150px;
     height: 150px;
 }
 
-.article_types,.article_types ul {
+.article_img_list {
+    margin-top: -80px;
+    width: 150px;
+    height: 150px;
+}
+
+.article_types,
+.article_types ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -183,27 +192,27 @@ article:hover {
     height: 100vh;
 }
 
-.content_loading img{
+.content_loading img {
     width: 300px;
     height: 300px;
 }
 
-.display_none{
+.display_none {
     display: none;
 }
 
-.btn_plus{
+.btn_plus {
     width: 30px;
     margin-top: 50px;
     cursor: pointer;
     transition: all 250ms ease-in-out;
 }
 
-.btn_plus:hover{
+.btn_plus:hover {
     scale: 1.1;
 }
 
-.more_loading{
+.more_loading {
     display: none;
     width: 30px;
     margin-top: 50px;
@@ -261,7 +270,7 @@ article:hover {
     font-size: 14px;
 }
 
-.abilities{
+.abilities {
     width: 90%;
     list-style: none;
     padding: 0;
@@ -275,7 +284,7 @@ article:hover {
     gap: 10px;
 }
 
-.abilities ul{
+.abilities ul {
     width: 100%;
     list-style: none;
     padding: 0;
@@ -293,7 +302,7 @@ article:hover {
     border: 1px solid #efefef5b;
 }
 
-.stats{
+.stats {
     width: 90%;
     list-style: none;
     padding: 0;
@@ -307,12 +316,12 @@ article:hover {
     gap: 10px;
 }
 
-.div_stats{
+.div_stats {
     display: flex;
-    gap: 10px;
+    gap: 5px;
 }
 
-.div_stats ul{
+.div_stats ul {
     list-style: none;
     margin: 0;
     padding: 5px;
@@ -326,41 +335,86 @@ article:hover {
     gap: 10px;
 }
 
-.kp{
+.kp {
     background-color: rgb(255, 196, 0);
     padding: 5px;
     border-radius: 50%;
 }
 
-.at{
+.at {
     background-color: red;
     color: white;
     padding: 5px;
     border-radius: 50%;
 }
 
-.ve{
+.ve {
     background-color: rgb(0, 4, 255);
     color: white;
     padding: 5px;
     border-radius: 50%;
 }
 
-.sa{
+.sa {
     background-color: rgb(255, 0, 119);
     color: white;
     padding: 5px;
     border-radius: 50%;
 }
 
-.sd{
+.sd {
     background-color: rgb(0, 255, 42);
     padding: 5px;
     border-radius: 50%;
 }
 
-.ini{
+.ini {
     background-color: rgb(0, 225, 255);
     padding: 5px;
     border-radius: 50%;
+}
+
+.evolution {
+    width: 90%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    width: 270px;
+    background-color: #efefef;
+    border: 1px solid #dfdede;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.filter select {
+    width: 290px;
+    padding: 5px 0px;
+    font-size: 15px;
+    border: 1px solid rgb(106, 160, 194);
+    border-radius: 5px;
+    background-color: lightskyblue;
+    color: #000000;
+    cursor: pointer;
+
+}
+
+.filter select:hover {
+    background-color: rgb(159, 212, 245);
+    border-color: #666;
 }

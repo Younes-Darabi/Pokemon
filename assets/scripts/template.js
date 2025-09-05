@@ -1,13 +1,13 @@
 function htmlPokemonListRender(i, list, listName) {
     return `
-<article onclick="showPokemondetailsInRight(${i},${listName})" class="bg_${list[i].types[0]}">
+<article onclick="showPokemondetailsInRight(${i},${listName}),showPokemondetailsInDialog(${i},${listName})" class="bg_${list[i].types[0]}">
     <div class="article_div">
         <div class="details_img">
             <div class="title_number">
                 <h2>#${(list[i].id).toString().padStart(4, "0")}</h2>
                 <h3>${list[i].de}</h3>
             </div>
-            <img class="article_img" src="${list[i].imageUrl}" alt="${list[i].name}"></img>
+            <img class="article_img_list" src="${list[i].imageUrl}" alt="${list[i].name}"></img>
         </div>
         <div class="article_types">
             <ul>${showPokemonTypes(i, list)}</ul>
@@ -44,11 +44,6 @@ function htmlShowPokemondetailsInRight(i, list) {
 </div>
         `;
 }
-
-    // <div class="Evolution">
-    //     <h4>Evolution</h4>
-    //     <div class="div_Evolution">${showPokemonStats(i, list)}</div>
-    // </div>
 
 function showPokemonStats(i, list) {
     return `
