@@ -21,10 +21,20 @@
         overflow: hidden;
     }
 
+    .pokemon_list {
+        justify-content: center;
+    }
+
+    body{
+        min-height: 100vh;
+        justify-content: space-between;
+    }
+
     main {
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
+        flex: 1;
     }
 
     .content_right {

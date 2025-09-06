@@ -2,6 +2,7 @@ let pokemonDB = [];
 let dbForPokemonDB = [];
 let searchPokemonDB = [];
 let arrayFilter = [];
+let myList = [];
 
 function init() {
     pokemonDbMaker();
@@ -23,25 +24,42 @@ function pokemonListRender(list, listName) {
     output.innerHTML = html;
     document.getElementById('content_loading').style.display = "none";
     document.getElementById('div_body').classList.remove('display_none');
+    document.getElementById('footer').classList.remove('display_none');
+    document.getElementById('header').classList.remove('display_none');
     document.getElementById('more_loading').style.display = "none";
     document.getElementById('btn_plus').style.display = "block";
 }
 
 function searchInPokemonList() {
-    document.getElementById('btn_plus').style.display = "none"
-    let value = document.getElementById('search_input').value.toLowerCase().trim();
-    if (value.length<3) {
-        pokemonListRender(pokemonDB, "pokemonDB");
+    const input = document.getElementById('search_input');
+    const btnPlus = document.getElementById('btn_plus');
+    const pokemonList = document.getElementById('pokemon_list');
+    const filter = document.getElementById('filter').value;
+
+    const value = input.value.toLowerCase().trim();
+    if (value.length <= 2) return;
+
+    btnPlus.style.display = "none";
+
+    const db = (filter !== "all") ? arrayFilter : pokemonDB;
+    const results = db.filter(item => item.de.toLowerCase().includes(value));
+
+    if (results.length === 0) {
+        pokemonList.innerHTML = "<p>Leider wurde kein Pokémon gefunden</p>";
         return;
     }
-    searchPokemonDB = pokemonDB.filter(item => item.de.toLowerCase().includes(value));
-    if (searchPokemonDB.length === 0) {
-        document.getElementById('pokemon_list').innerHTML = "<p>Leider wurde kein Pokémon gefunden</p>";
-        document.getElementById('btn_plus').style.display = "none";
-    } else {
-        pokemonListRender(searchPokemonDB, "searchPokemonDB");
-        document.getElementById('btn_plus').style.display = "none";
-    }
+
+    pokemonListRender(results, "searchPokemonDB");
+}
+
+function deleteSearch() {
+    document.getElementById('search_input').value = "";
+    pokemonListRender(pokemonDB, 'pokemonDB');
+}
+
+function deletefilter() {
+    document.getElementById('filter').value = "all";
+    pokemonListRender(pokemonDB, 'pokemonDB');
 }
 
 function pokemonDbMaker() {
@@ -55,7 +73,7 @@ function pokemonDbMaker() {
             "de": pokemonSpecies[i].names[5].name,
             "height": pokemonDetails[i].height,
             "weight": pokemonDetails[i].weight,
-            "imageUrl": pokemonDetails[i].sprites.other.home.front_default,
+            "imageUrl": pokemonDetails[i].sprites.other.dream_world.front_default,
             "types": [],
             "abilities": [],
             "stats": [],
@@ -133,6 +151,7 @@ function showPokemondetailsInRight(i, list) {
 }
 
 function showPokemondetailsInDialog(i, list) {
+    myList = list;
     document.getElementById('body').classList.add("overflow_hidden");
     let dialog = document.getElementById('dialog');
     dialog.classList.add("dialog");
@@ -142,8 +161,25 @@ function showPokemondetailsInDialog(i, list) {
     dialog.classList.remove("dialog_none_mob")
     dialog.innerHTML = htmlShowPokemondetailsInRight(i, list);
     dialog.innerHTML += `
-    <img class="exit" onclick="exitDialog()" src="assets/img/icons/exit.png" alt="exit">
+    <div class="div_exit_back_next">
+        <img class="exit" onclick="btnBack(${i})" src="assets/img/icons/back.png" alt="back">
+        <img class="exit" onclick="exitDialog()" src="assets/img/icons/exit.png" alt="exit">
+        <img class="exit" onclick="btnNext(${i})" src="assets/img/icons/next.png" alt="next">
+    </div>
     `;
+}
+
+function btnNext(i) {
+    if (++i < myList.length) {
+        showPokemondetailsInDialog(i, myList)
+    }
+}
+
+function btnBack(i) {
+    if (i >= 1) {
+        i--;
+        showPokemondetailsInDialog(i, myList)
+    }
 }
 
 function exitDialog(dialog) {
@@ -153,7 +189,7 @@ function exitDialog(dialog) {
 }
 
 function filterRender() {
-
+    arrayFilter = []
     let selectFilter = document.getElementById('filter').value;
     if (selectFilter == "all") {
         pokemonListRender(pokemonDB, 'pokemonDB');

@@ -19,6 +19,14 @@
     <div id="content_loading" class="content_loading">
         <img src="assets/img/loading.gif" alt="Loading">
     </div>
+    <header id="header" class="display_none">
+        <img src="assets/img/pokemon-logo.png" alt="logo Pokemon">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
     <div id="div_body" class="div_body display_none">
         <main>
             <div class="content_left">
@@ -31,7 +39,9 @@
                 <div class="div_right">
                     <div id="content_right" class="content_right"></div>
                     <div class="search">
-                        <input onkeyup="searchInPokemonList()" type="search" class="search_input" placeholder="Bitte hier zum Suchen eingeben" id="search_input">
+                        <input onkeyup="searchInPokemonList()" type="search" class="search_input"
+                            placeholder="Bitte hier zum Suchen eingeben" id="search_input">
+                        <img onclick="deleteSearch()" src="assets/img/icons/remove.png" alt="remove">
                     </div>
                     <div class="filter">
                         <select onchange="filterRender()" id="filter" name="filter">
@@ -54,12 +64,16 @@
                             <option value="Stahl">Stahl🛡️</option>
                             <option value="Fee">Fee✨</option>
                         </select>
+                        <img onclick="deletefilter()" src="assets/img/icons/trash.png" alt="remove">
                     </div>
                 </div>
             </div>
         </main>
         <div id="dialog" class="dialog_none dialog_none_mob"></div>
     </div>
+    <footer id="footer" class="display_none">
+        <p>© Alle Rechte vorbehalten. Diese Website gehört und wird betrieben von Pokemon.</p>
+    </footer>
 </body>
 
 </html>
