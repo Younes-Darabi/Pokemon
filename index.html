@@ -43,28 +43,31 @@
                             placeholder="Bitte hier zum Suchen eingeben" id="search_input">
                         <img onclick="deleteSearch()" src="assets/img/icons/remove.png" alt="remove">
                     </div>
-                    <div class="filter">
-                        <select onchange="filterRender()" id="filter" name="filter">
-                            <option value="all">Filter: Bitte wähle einen Typ aus</option>
-                            <option value="Normal">Normal</option>
-                            <option value="Feuer">Feuer🔥</option>
-                            <option value="Wasser">Wasser💧</option>
-                            <option value="Pflanze">Pflanze🌿</option>
-                            <option value="Elektro">Elektro⚡</option>
-                            <option value="Eis">Eis❄️</option>
-                            <option value="Kampf">Kampf🥊</option>
-                            <option value="Gift">Gift☠️</option>
-                            <option value="Boden">Boden🌍</option>
-                            <option value="Flug">Flug🕊️</option>
-                            <option value="Psycho">Psycho🔮</option>
-                            <option value="Käfer">Käfer🐞</option>
-                            <option value="Gestein">Gestein🪨</option>
-                            <option value="Geist">Geist👻</option>
-                            <option value="Drache">Drache🐉</option>
-                            <option value="Stahl">Stahl🛡️</option>
-                            <option value="Fee">Fee✨</option>
-                        </select>
-                        <img onclick="deletefilter()" src="assets/img/icons/trash.png" alt="remove">
+                    <div class="div_filter">
+                        <div class="filter">
+                            <select onchange="filterRender()" id="filter" name="filter">
+                                <option value="all">Filter: Bitte wähle einen Typ aus</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Feuer">Feuer🔥</option>
+                                <option value="Wasser">Wasser💧</option>
+                                <option value="Pflanze">Pflanze🌿</option>
+                                <option value="Elektro">Elektro⚡</option>
+                                <option value="Eis">Eis❄️</option>
+                                <option value="Kampf">Kampf🥊</option>
+                                <option value="Gift">Gift☠️</option>
+                                <option value="Boden">Boden🌍</option>
+                                <option value="Flug">Flug🕊️</option>
+                                <option value="Psycho">Psycho🔮</option>
+                                <option value="Käfer">Käfer🐞</option>
+                                <option value="Gestein">Gestein🪨</option>
+                                <option value="Geist">Geist👻</option>
+                                <option value="Drache">Drache🐉</option>
+                                <option value="Stahl">Stahl🛡️</option>
+                                <option value="Fee">Fee✨</option>
+                            </select>
+                            <img onclick="deleteFilter()" src="assets/img/icons/trash.png" alt="remove">
+                        </div>
+                        <div id="pokemon_filter" class="pokemon_filter"></div>
                     </div>
                 </div>
             </div>
@@ -75,5 +78,4 @@
         <p>© Alle Rechte vorbehalten. Diese Website gehört und wird betrieben von Pokemon.</p>
     </footer>
 </body>
-
 </html>

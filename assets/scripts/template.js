@@ -73,3 +73,22 @@ function showPokemonStats(i, list) {
         </ul>
     `;
 }
+
+function htmlBtnExitBackNext(i) {
+    return ` 
+    <div class="div_exit_back_next">
+        <img class="exit" onclick="btnBack(${i})" src="assets/img/icons/back.png" alt="back">
+        <img class="exit" onclick="exitDialog()" src="assets/img/icons/exit.png" alt="exit">
+        <img class="exit" onclick="btnNext(${i})" src="assets/img/icons/next.png" alt="next">
+    </div>
+    `;
+}
+
+function htmlShowFilter(selectFilter){
+    return `
+        <div id="${selectFilter}" class="filter_name">
+            <p>${selectFilter}</p>
+            <img onclick="singleFilterDelete('${selectFilter}')" src="assets/img/icons/cross.png">
+        </div>
+    `;
+}

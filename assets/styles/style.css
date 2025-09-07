@@ -464,10 +464,11 @@ article:hover {
     gap: 10px;
 }
 
-.filter {
+.div_filter {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     font-size: 14px;
     width: 270px;
     background-color: #efefef;
@@ -476,6 +477,14 @@ article:hover {
     border-radius: 5px;
     gap: 10px;
     margin-top: 5px;
+}
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    width: 100%;
+    gap: 10px;
 }
 
 .filter select {
@@ -498,4 +507,28 @@ article:hover {
 .div_exit_back_next {
     display: flex;
     gap: 70px;
+}
+
+.pokemon_filter{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.pokemon_filter img{
+    width: 11px;
+    height: 11px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+.pokemon_filter img:hover{
+    scale: 1.1;
+}
+
+.filter_name{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 5px;
 }
