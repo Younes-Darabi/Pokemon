@@ -110,10 +110,13 @@ function savePokemonShortStoryPokemonDB() {
 }
 
 async function showMorePokemonInList() {
+    document.getElementById('filter').value = "all";
+    document.getElementById('pokemon_filter').innerHTML = "";
     document.getElementById('btn_plus').style.display = "none"
     document.getElementById('more_loading').style.display = "block"
     start += 50;
     await fetchs();
+    arrayFilter = [];
 }
 
 function showPokemonTypes(i, list) {
@@ -146,6 +149,7 @@ function showPokemondetailsInDialog(i, list) {
 }
 
 function btnNext(i) {
+    if (i == myList.length - 1) { i = -1 }
     if (++i < myList.length) {
         showPokemondetailsInDialog(i, myList)
     }
@@ -154,8 +158,10 @@ function btnNext(i) {
 function btnBack(i) {
     if (i >= 1) {
         i--;
-        showPokemondetailsInDialog(i, myList)
+    } else {
+        i = myList.length - 1;
     }
+    showPokemondetailsInDialog(i, myList)
 }
 
 function exitDialog(dialog) {
@@ -198,8 +204,7 @@ function singleFilterDelete(selectFilter) {
         document.getElementById('pokemon_filter').innerHTML = "";
         document.getElementById('filter').value = "all";
     }
-    let divId = document.getElementById(selectFilter);
-    divId.remove();
+    if (document.getElementById(selectFilter)) { document.getElementById(selectFilter).remove() };
 }
 
 function deleteFilter() {

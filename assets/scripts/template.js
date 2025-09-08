@@ -69,7 +69,7 @@ function showPokemonStats(i, list) {
         </ul>
         <ul>
             <li class="ini">INI</li>
-            <li>${list[i].stats[4]}</li>
+            <li>${list[i].stats[5]}</li>
         </ul>
     `;
 }
@@ -84,7 +84,7 @@ function htmlBtnExitBackNext(i) {
     `;
 }
 
-function htmlShowFilter(selectFilter){
+function htmlShowFilter(selectFilter) {
     return `
         <div id="${selectFilter}" class="filter_name">
             <p>${selectFilter}</p>
